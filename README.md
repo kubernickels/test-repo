@@ -9,5 +9,5 @@ export KUBECONFIG=
 
 helm install argocd --namespace argocd --create-namespace  argo/argo-cd
 
-kubectl apply -f REMOTE_URL
+kubectl apply -f https://raw.githubusercontent.com/kubernickels/test-repo/main/registry/registry.yaml
 ```
