@@ -32,7 +32,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/kubernickels/test-repo.git
-    path: registry/argocd-overlay
+    path: registry
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
