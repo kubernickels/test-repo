@@ -11,6 +11,16 @@ spec:
     repoURL: 'https://argoproj.github.io/argo-helm'
     chart: argo-cd
     targetRevision: 4.9.14
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+
     # helm:
     #   values: |-
     #      additionalApplications:
@@ -40,15 +50,6 @@ spec:
     #               duration: 5s
     #               maxDuration: 5m0s
     #               factor: 2
-  destination:
-    server: "https://kubernetes.default.svc"
-    namespace: argocd
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
 
 # apiVersion: argoproj.io/v1alpha1
 # kind: Application
